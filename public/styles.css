@@ -1,0 +1,23 @@
+body {
+  
+  background-image: url('http://i40.tinypic.com/sdg460.jpg');
+  background-size: cover;
+  background-repeat: none;
+
+}
+
+#mainWell {
+  display: table;
+  margin: 25% 25% 25% 25%;
+  border-radius: 50px;
+  height: 450px;
+  width: 300px;
+  text-align: center;
+}
+
+.currentCity {
+font-size: 25px;
+font-weight: bold;
+font-family: times;
+
+}
