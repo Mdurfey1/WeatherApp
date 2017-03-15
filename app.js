@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
-// app.use('/scripts', express.static(__dirname + '/node_modules'));
 app.use(express.static(__dirname + '/node_modules'));
 
 app.get('/', function (req, res) {
@@ -23,12 +22,11 @@ request(weatherURL, function (error, response, body) {
 console.log(weatherURL);
 console.log(response);
 
-})
 res.send(response.body);
 
-});
+})
 
-// app.use('/static', express.static(path.join(__dirname, 'WeatherApp')))
+});
 
 app.listen(3000, function () {
 
