@@ -14,25 +14,62 @@
 
   <div class = "container-fluid background-image">
     <div class = "row">
-      <div class = "well col-lg-4 col-lg-offset-4" id="mainWell">
-      <h1 class = "text-primary" id= "currentCity"></h1>
-      <span class = "text-secondary" id = "currentState"></span>
-      <span class = "text-secondary" id = "currentArea"></span>
-      <div class = "glyphicon glyphicon-map-marker"></div>
-      <div class = "border" id="border1"></div>
-       <span class = 'iconimage' id = "iconImage"></span>
-      <h4 class = "text-secondary temp" id = "temp"></h4>
-      <div class = " well weather-description col-lg-12" id="weather-description">
+        <div class = "well col-lg-4 col-lg-offset-4" id="mainWell">
+        <h1 class = "text-primary" id= "currentCity"></h1>
+        <span class = "text-secondary" id = "currentState"></span>
+        <span class = "text-secondary" id = "currentArea"></span>
+        <div class = "glyphicon glyphicon-map-marker">
+        </div>
+        <div class = "border" id="border1">
+        </div>
+        <span class = 'iconimage' id = "iconImage"></span>
+        <p class = "text-secondary" id = "weather-description"></p>
+        <h4 class = "text-secondary h4" id = "temp"></h4>
+        <div class = "buttons">
+        <button class = "btn btn-info btn-sm" id="toggle-f">F</button>
+        <button class = "btn btn-info btn-sm" id ="toggle-c">C</button>
+        </div><!--buttons-->
+        <div class = " well weather-description col-lg-12" id="weather-description">
+      <TABLE>
+      <tr>
+        <td class = "humidity">Humidity:</td>
+        <td id = "humidity" style = "text-align: center"></td>
+      </tr>
+      <tr>
+        <td class = "windSpeed">Windspeed:</td>
+        <td id = "windSpeed" style = "text-align: center"></td>
+      </tr>
+      <tr>
+        <td class = "uv">UV Index:</td>
+        <td id = "uv" style = "text-align: center"></td>
+      </tr>
+      <tr>
+        <td class = "visibility">Visibility:</td>
+        <td id = "visibility" style="text-align: center"></td>
+      </tr>
+      <tr>
+        <td class = "windChill">Wind Chill:</td>
+        <td id = "windChill" style="text-align: center"></td>
+      </tr>
+      <tr>
+        <td class = "pressure">Pressure:</td>
+        <td id = "pressure" style="text-align: center"></td>
+      </tr>
 
-      <p class = "text-secondary humidity" id ="humidity" style = "float: left"></p><br>
-      <div class = "row">
-      </div>
-      <div class = "row">
-      <p class = "text-secondary windSpeed" id = "windSpeed" style = "float: left"></p>
-      <button class = "btn btn-primary btn-lg" id="windSpeedButton"> </button>
-      </div>
 
-      </div>
+        <!-- <h5 class = "text-secondary humidity text-left" id ="humidity"></h5>
+
+        <h5 class = "text-secondary windSpeed text-left" id = "windSpeed"></h5>
+        <h5 class = "uv text-left text-secondary" id = "uv"></h5>
+
+        <p class = "visibility" id = "visibility"></p>
+        <p class = "feels-like-f" id = "feels-like-f"></p>
+        <p class = "visibility_mi text-left" id = "visibility_mi"></p> -->
+      </TABLE>
+        
+        
+
+        </div><!--weather-description well-->
       </div>
     </div>
   </div>

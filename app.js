@@ -18,9 +18,6 @@ app.get('/wundergroundInfo', function(req, res){
 request(weatherURL, function (error, response, body) {
   console.log('error:', error); // Print the error if one occurred
   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log('body:', body); // Print the HTML for the Google homepage.
-console.log(weatherURL);
-console.log(response);
 
 res.send(response.body);
 

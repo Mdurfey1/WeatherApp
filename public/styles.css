@@ -1,9 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body {
   
   background-image: url('http://i40.tinypic.com/sdg460.jpg');
   background-size: cover;
   background-repeat: none;
 
+}
+
+.hidden {
+
+  display: none;
 }
 
 #mainWell {
@@ -13,6 +21,7 @@ body {
 /*  height: 450px;
   width: 300px;*/
   text-align: center;
+  font-family: Roboto;
 }
 
 .currentCity {
@@ -35,6 +44,7 @@ border-top: 200px;
 
 #currentArea {
   margin-top: 2px;
+  padding-top: 20px;
 }
 
 #temp {
@@ -54,6 +64,34 @@ border-top: 200px;
 
 .glyphicon {
 margin-bottom: 7%;
-margin-top: 0;
+margin-top: -10px;
 
 }
+
+#humidity {
+  text-align: left;
+
+}
+
+#windSpeed {
+text-align: left;
+}
+
+#uv {
+  text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+
+/*padding-right: 10px;*/
+text-align: left;
+border-bottom: 1px solid #ddd;
+
+}
+
+
