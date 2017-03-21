@@ -12,7 +12,6 @@ var request = require('request');
 
 app.get('/wundergroundInfo', function(req, res){
   var coords = req.query;
-  console.log(coords);
   var weatherURL = `http://api.wunderground.com/api/693a7e57a6eba40b/conditions/q/${coords.latitude},${coords.longitude}.json`;
 
 request(weatherURL, function (error, response, body) {

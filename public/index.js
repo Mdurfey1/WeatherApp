@@ -14,7 +14,6 @@ $(document).ready(function() {
     .then(d => { 
         d = JSON.parse(d);
         var dataSet = d.current_observation;
-        console.log(dataSet);
         var iconURL = dataSet.icon_url;
         var currentCity = dataSet.observation_location.city;
         for (var i = currentCity.length; i > 0; i--) {
@@ -26,7 +25,6 @@ $(document).ready(function() {
         for (var i = 0; i < currentCity.length; i++) {
             if (currentCity[i] === ',') {
         var currentArea = currentCity.slice(0, i);
-        console.log(currentArea)
         break;
             }
         }
@@ -57,7 +55,6 @@ else if (currentUvColor == null) {
     $("#uv").css("background-color", "#289500")
 }
 
-console.log(currentUvColor);
 
 
 //BACKGROUND//
