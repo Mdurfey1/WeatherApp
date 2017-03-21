@@ -1,2 +1,2 @@
 # WeatherApp
-Location based interactive local weather
+Location based interactive local weather utilizing a local node server
