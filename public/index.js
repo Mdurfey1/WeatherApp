@@ -32,7 +32,7 @@ $(document).ready(function() {
         }
         var currentState = dataSet.observation_location.state;
         var uv = Number(dataSet.UV);
-        var uvArray = [null,"#289500","#289500","F7E400","F7E400","F7E400","F85900","F85900","D80010","D80010", "6B49C8"];
+        var uvArray = [null,"#289500","#289500","#F7E400","#F7E400","#F7E400","#F85900","#F85900","#D80010","#D80010", "#6B49C8"];
         var currentUvColor = uvArray[uv];
         var feelsLikeF = dataSet.feelslike_f;
         var feelsLikeC = dataSet.feelslike_c;
@@ -56,6 +56,8 @@ if (currentUvColor != null) {
 else if (currentUvColor == null) {
     $("#uv").css("background-color", "#289500")
 }
+
+console.log(currentUvColor);
 
 
 //BACKGROUND//
