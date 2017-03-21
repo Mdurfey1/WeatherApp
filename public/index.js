@@ -49,14 +49,14 @@ $(document).ready(function() {
         var windChillC = dataSet.windchill_c;
         var windChillF = dataSet.windchill_f;
         var iconDesc = dataSet.icon;
-        console.log(currentUvColor);
-
-if (currentUvColor == null) {
-    $('.uvColor').css("background-color", `"${currentUvColor}"`);
+        
+if (currentUvColor != null) {
+    $("#uv").css("background-color", `${currentUvColor}`)
 }
-else if (currentUvColor != null) {
-        $('.uvColor').css("background-color", `"${currentUvColor}"`)
-    }
+else if (currentUvColor == null) {
+    $("#uv").css("background-color", "#289500")
+}
+
 
 //BACKGROUND//
 
@@ -223,7 +223,10 @@ if(iconURL === "http://icons.wxug.com/i/c/k/nt_chanceflurries.gif") {
             $('#visibility').html(`${visibilityMPH} <span style = "font-size: 10px;">mi</span>`);
             $('#windChill').html(`${windChillF}°F`);
             if (windChillF != "NA") {
-                $('#windChill').html(`${windChillF}°F`)
+                $('#windChill').html(`${windChillF}°F`);
+            }
+            else if (windChillF == "NA") {
+                $('#windChill').html(`${windChillF}`);
             }
 })
 })

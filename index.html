@@ -39,31 +39,32 @@
         <div class = " well weather-description col-lg-12" id="weather-description">
           <TABLE>
             <tr>
-              <td class = "humidity">Humidity:</td>
-              <td id = "humidity" style = "text-align: center"></td>
+              <td class = "humidity" style = "width: 110px; text-align: right">Humidity:</td>
+              <td id = "humidity" style = "text-align: center; margin-left: 50%"></td>
             </tr>
             <tr>
-              <td class = "windSpeed">Windspeed:</td>
+              <td class = "windSpeed" style = "width: 100px; text-align: right">Windspeed:</td>
               <td id = "windSpeed" style = "text-align: center"></td>
             </tr>
             <tr>
-              <td class = "uv">UV Index:</td>
-              <td class = "uvColor" id = "uvColor" style = "text-align: center"></td>
+              <td class = "uvDescription" style = "width: 100px; text-align: right"><a href = "https://www.epa.gov/sunsafety/UV-index-scale-1" alt = "UV index link" target = "_blank">UV Index:</a></td>
+              <td class = "uv" style = "text-align: center; color: white"><div class = "UVBackground" id = "uv" style = "text-align: center"></div></td>
             </tr>
             <tr>
-              <td class = "visibility">Visibility:</td>
+              <td class = "visibility" style = "width: 100px; text-align: right">Visibility:</td>
               <td id = "visibility" style="text-align: center"></td>
             </tr>
             <tr>
-              <td class = "windChill">Wind Chill:</td>
+              <td class = "windChill" style = "width: 100px; text-align: right">Wind Chill:</td>
               <td id = "windChill" style="text-align: center"></td>
             </tr>
             <tr>
-              <td class = "pressure">Pressure:</td>
-              <td id = "pressure" style="text-align: center"></td>
+              <td class = "pressure" style="border-bottom: none; width: 100px; text-align: right">Pressure:</td>
+              <td id = "pressure" style="text-align: center; border-bottom: none"></td>
             </tr>
           </TABLE>
         </div><!--weather-description well-->
+        <a class = "weatherUnderground link" id = "link" href = "https://www.wunderground.com/?apiref=754ee06cb3e9466d" alt = "Weather underground link">Weather Underground</a>
       </div>
     </div>
   </div>
