@@ -49,8 +49,18 @@ $(document).ready(function() {
         var windChillC = dataSet.windchill_c;
         var windChillF = dataSet.windchill_f;
         var iconDesc = dataSet.icon;
-        console.log(iconDesc)
-        console.log(iconURL)
+        console.log(currentUvColor);
+
+if (currentUvColor == null) {
+    $('.uvColor').css("background-color", `"${currentUvColor}"`);
+}
+else if (currentUvColor != null) {
+        $('.uvColor').css("background-color", `"${currentUvColor}"`)
+    }
+
+//BACKGROUND//
+
+
         if(iconDesc === "cloudy") {
     $('body').css('background-image', "url(https://static.pexels.com/photos/158163/clouds-cloudporn-weather-lookup-158163.jpeg)" );
 }
@@ -111,20 +121,78 @@ if(iconURL === "http://icons.wxug.com/i/c/k/chancerain.gif") {
 if(iconURL === "http://icons.wxug.com/i/c/k/chanceflurries.gif") {
     $('body').css('background-image', "url(https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg)" );
 }
+//--------------------------------night---------------------------//
 
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_tstorms.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/28774/pexels-photo-28774.jpg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_sunny.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg)");
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_snow.gif") {
+    $('body').css('background-image', "url(http://www.publicdomainpictures.net/pictures/30000/velka/night-snow.jpg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_sleet.gif") {
+    $('body').css('background-image', "url(http://www.publicdomainpictures.net/pictures/30000/velka/night-snow.jpg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_rain.gif") {
+    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/5/58/Rain-drops.jpg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_partlysunny.gif") {
+    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_mostlysunny.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_hazy.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/196920/pexels-photo-196920.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_fog.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/1068/lights-night-dark-industry.jpg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_flurries.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_clear.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_chancetstorms.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_chancesnow.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_chancesleet.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_chancerain.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
+}
+if(iconURL === "http://icons.wxug.com/i/c/k/nt_chanceflurries.gif") {
+    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
+}
 
 
 //-----------------------------------------------------------//success jquery-->
+
+
         var htmlf = `${currentTemp}°<span style = "font-size: 15px;">F</span>`;
         var htmlc = `${currentTempCelcius}°<span style = "font-size: 15px;">C</span>`;
         if (currentCityShortened) { 
         $('#currentCity').text(`${currentCityShortened}`);
             }
-
-        $('#currentAreaDescription').html(`<h3 style = "font-size: 15px;">Reading from:</h3>`);
-        $('#currentState').html(`<h3>${currentState}</h3>`);
-        $('#currentArea').html(`<h4>${currentArea}</h4>`);
-        // $(`#currentstate`).html(`<h4>Currently: ${currentTemp}</h4>`)
+        $('#weather-location').html(`<h3 style = "font-size: 11px;">Reading From:</h3>`);
+        $('#currentState').html(`${currentState}`);
+        $('#currentArea').html(`${currentArea}`);
         $('#iconImage').html(`<img src = "${iconURL}"></img>`);
         $('#weather-description').text(`${weatherDescription}`);
         $('#temp').html(htmlf);
@@ -160,9 +228,7 @@ if(iconURL === "http://icons.wxug.com/i/c/k/chanceflurries.gif") {
 })
 })
 
-//Background image
-
-}
+} //SUCCESS//
     function error (err){ 
     console.log(err)
 };

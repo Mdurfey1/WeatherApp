@@ -9,6 +9,10 @@ body {
 
 }
 
+.buttons {
+margin-bottom: 3%;
+}
+
 .hidden {
 
   display: none;
@@ -16,50 +20,51 @@ body {
 
 #mainWell {
   display: table;
-  margin: 25% 25% 25% 25%;
   border-radius: 50px;
-/*  height: 450px;
-  width: 300px;*/
   text-align: center;
   font-family: Roboto;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
-.currentCity {
-font-size: 25px;
-font-weight: bold;
-font-family: times;
+#currentCity {
+font-size: 35px;
+margin-bottom: 5px;
+}
 
+#currentState {
+  margin-bottom: 8px;
+  margin-top: 0px;
 }
 
 #iconImage {
 border-top: 200px;
-
+text-align: center;
 }
 
 #border1 {
   border-top: dashed;
   border-width: 1px;
-  margin-bottom: 10px;
+  margin-bottom:6px;
+
+}
+
+#weather-location > h3{
+  margin-bottom: 0px;
 }
 
 #currentArea {
-  margin-top: 2px;
-  padding-top: 20px;
+  font-size: 20px;
 }
+
+.uv {
+  }
+
 
 #temp {
   font-size: 20px;
   padding: 1%;
   padding-top: 0!important;
-}
-
-#currentState {
-  margin-bottom: 8px;
-
-}
-
-#currentArea {
-  margin-bottom: 0;
 }
 
 .glyphicon {
