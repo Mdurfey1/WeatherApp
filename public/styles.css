@@ -1,9 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+
 body {
   
-  background-image: url('https://i40.tinypic.com/sdg460.jpg');
+  background-color: rgb(192,192,192);
   background-size: cover;
   background-repeat: none;
 
