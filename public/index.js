@@ -59,127 +59,53 @@ else if (currentUvColor == null) {
 
 //BACKGROUND//
 
-
-        if(iconDesc === "cloudy") {
+//why is this different?
+if(iconDesc === "cloudy") {
     $('body').css('background-image', "url(https://static.pexels.com/photos/158163/clouds-cloudporn-weather-lookup-158163.jpeg)" );
 }
-if(iconURL === "http://icons.wxug.com/i/c/k/partlycloudy.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/4/4b/Kettle_Creek_State_Park_vista.jpg)" );
+var backgroundUrlIdentifier = iconURL.slice(28, -4);
+var backgroundUrls = {
+    partlycloudy: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Kettle_Creek_State_Park_vista.jpg",
+    tstorms: "https://static.pexels.com/photos/167915/pexels-photo-167915.jpeg",
+    sunny: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Cidade_da_Horta,_vista_parcial_do_cimo_do_Miradouro_de_Nossa_Senhora_da_Concei%C3%A7%C3%A3o,_concelho_da_Horta,_ilha_do_Faial,_A%C3%A7ores,_Porttugal.JPG",
+    snow: "https://upload.wikimedia.org/wikipedia/commons/1/13/Nature_landscape_snowing_mountains_village_Austria_(8279714859).jpg",
+    sleet: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Sleet.JPG",
+    rain: "https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg",
+    partlysunny: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg",
+    partlycloudy: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg",
+    mostlysunny: "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+    mostlycloudy: "https://www.goodfreephotos.com/albums/sky-and-clouds/sunlight-streaming-above-the-clouds.jpg",
+    hazy: "https://static.pexels.com/photos/31133/pexels-photo-31133.jpg",
+    fog: "https://www.goodfreephotos.com/albums/united-states/california/san-francisco/fog-and-mist-over-san-francisco-california.jpg",
+    flurries: "https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg",
+    clear: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Cidade_da_Horta,_vista_parcial_do_cimo_do_Miradouro_de_Nossa_Senhora_da_Concei%C3%A7%C3%A3o,_concelho_da_Horta,_ilha_do_Faial,_A%C3%A7ores,_Porttugal.JPG",
+    chancetstorms: "https://coclouds.com/wp-content/uploads/2013/06/passing-thunderstorm-pink-sunset-2013-06-29.jpg",
+    chancesnow: "https://static.pexels.com/photos/54206/pexels-photo-54206.jpeg",
+    chancesleet: "https://upload.wikimedia.org/wikipedia/commons/0/03/RhB_ABe_8-12_Langwieser_Viadukt.jpg",
+    chancerain: "http://www.pixnio.com/free-images/2017/03/15/2017-03-15-18-08-46.jpg",
+    chanceflurries: "https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg",
+    nt_partlycloudy: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
+    nt_tstorms: "https://static.pexels.com/photos/28774/pexels-photo-28774.jpg",
+    nt_sunny: "https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg",
+    nt_snow: "http://www.publicdomainpictures.net/pictures/30000/velka/night-snow.jpg",
+    nt_sleet: "http://www.publicdomainpictures.net/pictures/30000/velka/night-snow.jpg",
+    nt_rain: "https://upload.wikimedia.org/wikipedia/commons/5/58/Rain-drops.jpg",
+    nt_partlysunny: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg",
+    nt_partlycloudy: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
+    nt_mostlysunny: "https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg",
+    nt_mostlycloudy: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
+    nt_hazy: "https://static.pexels.com/photos/196920/pexels-photo-196920.jpeg",
+    nt_fog: "https://static.pexels.com/photos/1068/lights-night-dark-industry.jpg",
+    nt_flurries: "https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg",
+    nt_clear: "https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg",
+    nt_chancetstorms: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
+    nt_chancesnow: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
+    nt_chancesleet: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
+    nt_chancerain: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
+    nt_chanceflurries: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
 }
-if(iconURL === "http://icons.wxug.com/i/c/k/tstorms.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/167915/pexels-photo-167915.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/sunny.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/e/e2/Cidade_da_Horta,_vista_parcial_do_cimo_do_Miradouro_de_Nossa_Senhora_da_Concei%C3%A7%C3%A3o,_concelho_da_Horta,_ilha_do_Faial,_A%C3%A7ores,_Porttugal.JPG)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/snow.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/1/13/Nature_landscape_snowing_mountains_village_Austria_(8279714859).jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/sleet.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/a/a7/Sleet.JPG)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/rain.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/partlysunny.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/partlycloudy.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/mostlysunny.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/mostlycloudy.gif") {
-    $('body').css('background-image', "url(https://www.goodfreephotos.com/albums/sky-and-clouds/sunlight-streaming-above-the-clouds.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/hazy.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/31133/pexels-photo-31133.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/fog.gif") {
-    $('body').css('background-image', "url(https://www.goodfreephotos.com/albums/united-states/california/san-francisco/fog-and-mist-over-san-francisco-california.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/flurries.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/clear.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/e/e2/Cidade_da_Horta,_vista_parcial_do_cimo_do_Miradouro_de_Nossa_Senhora_da_Concei%C3%A7%C3%A3o,_concelho_da_Horta,_ilha_do_Faial,_A%C3%A7ores,_Porttugal.JPG)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/chancetstorms.gif") {
-    $('body').css('background-image', "url(https://coclouds.com/wp-content/uploads/2013/06/passing-thunderstorm-pink-sunset-2013-06-29.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/chancesnow.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/54206/pexels-photo-54206.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/chancesleet.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/0/03/RhB_ABe_8-12_Langwieser_Viadukt.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/chancerain.gif") {
-    $('body').css('background-image', "url(http://www.pixnio.com/free-images/2017/03/15/2017-03-15-18-08-46.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/chanceflurries.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg)" );
-}
-//--------------------------------night---------------------------//
-
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_tstorms.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/28774/pexels-photo-28774.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_sunny.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg)");
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_snow.gif") {
-    $('body').css('background-image', "url(http://www.publicdomainpictures.net/pictures/30000/velka/night-snow.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_sleet.gif") {
-    $('body').css('background-image', "url(http://www.publicdomainpictures.net/pictures/30000/velka/night-snow.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_rain.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/5/58/Rain-drops.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_partlysunny.gif") {
-    $('body').css('background-image', "url(https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_mostlysunny.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_hazy.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/196920/pexels-photo-196920.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_fog.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/1068/lights-night-dark-industry.jpg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_flurries.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_clear.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_chancetstorms.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_chancesnow.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_chancesleet.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_chancerain.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
-}
-if(iconURL === "http://icons.wxug.com/i/c/k/nt_chanceflurries.gif") {
-    $('body').css('background-image', "url(https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg)" );
-}
-
+var backgroundUrl = backgroundUrls[backgroundUrlIdentifier];
+$('body').css('background-image', `url(${backgroundUrl})`);
 
 //-----------------------------------------------------------//success jquery-->
 
