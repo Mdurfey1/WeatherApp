@@ -12,10 +12,14 @@ $(document).ready(function() {
 
     $.get('/wundergroundInfo', {latitude, longitude}) 
     .then(d => { 
-        if (location.protocol != 'https:')
+
+        if (iconURL.protocol != 'https:')
 {
- location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+ iconURL.href = 'https:' + window.iconURL.href.substring(window.iconURL.protocol.length);
 }
+
+console.log(iconURL.protocol);
+
         d = JSON.parse(d);
         var dataSet = d.current_observation;
         var iconURL = dataSet.icon_url;
