@@ -1,0 +1,131 @@
+'use strict';
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//API call by coordinates: api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&APPID={f45810bc17a61b3bd23c98eabbbf081f}
+
+
+$(document).ready(function () {
+
+    function success(position) {
+
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        $.get('/wundergroundInfo', { latitude: latitude, longitude: longitude }).then(function (d) {
+            var _backgroundUrls;
+
+            d = JSON.parse(d);
+            var dataSet = d.current_observation;
+            var iconURL = dataSet.icon_url;
+            var currentCity = dataSet.observation_location.city;
+            for (var i = currentCity.length; i > 0; i--) {
+                if (currentCity[i] === ',') {
+                    var currentCityShortened = currentCity.slice(i + 2);
+                    break;
+                }
+            }
+            for (var i = 0; i < currentCity.length; i++) {
+                if (currentCity[i] === ',') {
+                    var currentArea = currentCity.slice(0, i);
+                    break;
+                }
+            }
+            var currentState = dataSet.observation_location.state;
+            var uv = Number(dataSet.UV);
+            var uvArray = [null, "#289500", "#289500", "#F7E400", "#F7E400", "#F7E400", "#F85900", "#F85900", "#D80010", "#D80010", "#6B49C8"];
+            var currentUvColor = uvArray[uv];
+            var feelsLikeF = dataSet.feelslike_f;
+            var feelsLikeC = dataSet.feelslike_c;
+            var humidity = dataSet.relative_humidity;
+            var currentTempCelcius = dataSet.temp_c;
+            var currentTemp = dataSet.temp_f;
+            var windSpeedMPH = dataSet.wind_mph;
+            var windSpeedKPH = dataSet.wind_kph;
+            var windDirection = dataSet.wind_dir;
+            var pressure = dataSet.pressure_in;
+            var weatherDescription = dataSet.weather;
+            var visibilityMPH = dataSet.visibility_mi;
+            var visibilityKPH = dataSet.visibility_km;
+            var windChillC = dataSet.windchill_c;
+            var windChillF = dataSet.windchill_f;
+            var iconDesc = dataSet.icon;
+
+            if (currentUvColor != null) {
+                $("#uv").css("background-color", '' + currentUvColor);
+            } else if (currentUvColor == null) {
+                $("#uv").css("background-color", "#289500");
+            }
+
+            //BACKGROUND//
+
+            //why is this different?
+            if (iconDesc === "cloudy") {
+                $('body').css('background-image', "url(https://static.pexels.com/photos/158163/clouds-cloudporn-weather-lookup-158163.jpeg)");
+            }
+            var backgroundUrlIdentifier = iconURL.slice(28, -4);
+            var backgroundUrls = (_backgroundUrls = {
+                partlycloudy: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Kettle_Creek_State_Park_vista.jpg",
+                tstorms: "https://static.pexels.com/photos/167915/pexels-photo-167915.jpeg",
+                sunny: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Cidade_da_Horta,_vista_parcial_do_cimo_do_Miradouro_de_Nossa_Senhora_da_Concei%C3%A7%C3%A3o,_concelho_da_Horta,_ilha_do_Faial,_A%C3%A7ores,_Porttugal.JPG",
+                snow: "https://upload.wikimedia.org/wikipedia/commons/1/13/Nature_landscape_snowing_mountains_village_Austria_(8279714859).jpg",
+                sleet: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Sleet.JPG",
+                rain: "https://static.pexels.com/photos/39811/pexels-photo-39811.jpeg",
+                partlysunny: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg"
+            }, _defineProperty(_backgroundUrls, 'partlycloudy', "https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg"), _defineProperty(_backgroundUrls, 'mostlysunny', "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg"), _defineProperty(_backgroundUrls, 'mostlycloudy', "https://www.goodfreephotos.com/albums/sky-and-clouds/sunlight-streaming-above-the-clouds.jpg"), _defineProperty(_backgroundUrls, 'hazy', "https://static.pexels.com/photos/31133/pexels-photo-31133.jpg"), _defineProperty(_backgroundUrls, 'fog', "https://www.goodfreephotos.com/albums/united-states/california/san-francisco/fog-and-mist-over-san-francisco-california.jpg"), _defineProperty(_backgroundUrls, 'flurries', "https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg"), _defineProperty(_backgroundUrls, 'clear', "https://upload.wikimedia.org/wikipedia/commons/e/e2/Cidade_da_Horta,_vista_parcial_do_cimo_do_Miradouro_de_Nossa_Senhora_da_Concei%C3%A7%C3%A3o,_concelho_da_Horta,_ilha_do_Faial,_A%C3%A7ores,_Porttugal.JPG"), _defineProperty(_backgroundUrls, 'chancetstorms', "https://coclouds.com/wp-content/uploads/2013/06/passing-thunderstorm-pink-sunset-2013-06-29.jpg"), _defineProperty(_backgroundUrls, 'chancesnow', "https://static.pexels.com/photos/54206/pexels-photo-54206.jpeg"), _defineProperty(_backgroundUrls, 'chancesleet', "https://upload.wikimedia.org/wikipedia/commons/0/03/RhB_ABe_8-12_Langwieser_Viadukt.jpg"), _defineProperty(_backgroundUrls, 'chancerain', "http://www.pixnio.com/free-images/2017/03/15/2017-03-15-18-08-46.jpg"), _defineProperty(_backgroundUrls, 'chanceflurries', "https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg"), _defineProperty(_backgroundUrls, 'nt_partlycloudy', "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg"), _defineProperty(_backgroundUrls, 'nt_tstorms', "https://static.pexels.com/photos/28774/pexels-photo-28774.jpg"), _defineProperty(_backgroundUrls, 'nt_sunny', "https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg"), _defineProperty(_backgroundUrls, 'nt_snow', "http://www.publicdomainpictures.net/pictures/30000/velka/night-snow.jpg"), _defineProperty(_backgroundUrls, 'nt_sleet', "http://www.publicdomainpictures.net/pictures/30000/velka/night-snow.jpg"), _defineProperty(_backgroundUrls, 'nt_rain', "https://upload.wikimedia.org/wikipedia/commons/5/58/Rain-drops.jpg"), _defineProperty(_backgroundUrls, 'nt_partlysunny', "https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg"), _defineProperty(_backgroundUrls, 'nt_partlycloudy', "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg"), _defineProperty(_backgroundUrls, 'nt_mostlysunny', "https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg"), _defineProperty(_backgroundUrls, 'nt_mostlycloudy', "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg"), _defineProperty(_backgroundUrls, 'nt_hazy', "https://static.pexels.com/photos/196920/pexels-photo-196920.jpeg"), _defineProperty(_backgroundUrls, 'nt_fog', "https://static.pexels.com/photos/1068/lights-night-dark-industry.jpg"), _defineProperty(_backgroundUrls, 'nt_flurries', "https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg"), _defineProperty(_backgroundUrls, 'nt_clear', "https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg"), _defineProperty(_backgroundUrls, 'nt_chancetstorms', "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg"), _defineProperty(_backgroundUrls, 'nt_chancesnow', "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg"), _defineProperty(_backgroundUrls, 'nt_chancesleet', "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg"), _defineProperty(_backgroundUrls, 'nt_chancerain', "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg"), _defineProperty(_backgroundUrls, 'nt_chanceflurries', "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg"), _backgroundUrls);
+            var backgroundUrl = backgroundUrls[backgroundUrlIdentifier];
+            $('body').css('background-image', 'url(' + backgroundUrl + ')');
+
+            //-----------------------------------------------------------//success jquery-->
+
+
+            var htmlf = currentTemp + '\xB0<span style = "font-size: 15px;">F</span>';
+            var htmlc = currentTempCelcius + '\xB0<span style = "font-size: 15px;">C</span>';
+            if (currentCityShortened) {
+                $('#currentCity').text('' + currentCityShortened);
+            }
+            $('#weather-location').html('<h3 style = "font-size: 11px;">Reading From:</h3>');
+            $('#currentState').html('' + currentState);
+            $('#currentArea').html('' + currentArea);
+            $('#iconImage').html('<img src = "' + iconURL + '"></img>');
+            $('#weather-description').text('' + weatherDescription);
+            $('#temp').html(htmlf);
+            $('#feelsLikeF').text('' + feelsLikeF);
+            $('#windSpeed').html(windSpeedMPH + ' <span style = "font-size: 10px;">MPH ' + windDirection + ' </span>');
+            $('#humidity').text('' + humidity);
+            $('#uv').text('' + uv);
+            $('#visibility').html(visibilityMPH + ' <span style = "font-size: 10px;">mi</span>');
+            if (windChillF != "NA") {
+                $('#windChill').html(windChillF + '\xB0F');
+            } else if (windChillF == "NA") {
+                $('#windChill').html('' + windChillF);
+            }
+            $('#pressure').html(pressure + '"');
+
+            $('#toggle-c').click(function () {
+                $('#temp').html(htmlc).fadeIn("slow");
+                $('#windSpeed').html(windSpeedKPH + ' <span style = "font-size: 10px;">KPH ' + windDirection + ' </span>').fadeIn(100);
+                $('#visibility').html(visibilityKPH + ' <span style = "font-size: 10px;">km</span>');
+                if (windChillC != "NA") {
+                    $('#windChill').html(windChillC + '\xB0C');
+                }
+            });
+            $('#toggle-f').click(function () {
+                $('#temp').html(htmlf).fadeIn("slow");
+                $('#windSpeed').html(windSpeedMPH + ' <span style = "font-size: 10px;">MPH ' + windDirection + ' </span>').fadeIn(100);
+                $('#visibility').html(visibilityMPH + ' <span style = "font-size: 10px;">mi</span>');
+                $('#windChill').html(windChillF + '\xB0F');
+                if (windChillF != "NA") {
+                    $('#windChill').html(windChillF + '\xB0F');
+                } else if (windChillF == "NA") {
+                    $('#windChill').html('' + windChillF);
+                }
+            });
+        });
+    } //SUCCESS//
+    function error(err) {
+        console.log(err);
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error);
+});
