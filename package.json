@@ -31,6 +31,6 @@
   "name": "my-package",
   "version": "1.0.0",
   "babel": {
-    "env"
+    "plugins": ["transform-es2015-arrow-functions"]
   }
 }
