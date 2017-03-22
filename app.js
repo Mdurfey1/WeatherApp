@@ -8,6 +8,10 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 })
 
+var port = process.env.PORT || 3000;
+
+app.set('view engine', 'ejs');
+
 var request = require('request');
 
 app.get('/wundergroundInfo', function(req, res){
@@ -24,7 +28,7 @@ res.send(response.body);
 
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
 
   console.log('Example app listening on port 3000!');
   
