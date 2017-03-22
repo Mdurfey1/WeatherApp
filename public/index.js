@@ -13,16 +13,12 @@ $(document).ready(function() {
     $.get('/wundergroundInfo', {latitude, longitude}) 
     .then(d => { 
 
-        if (iconURL.protocol != 'https:')
-{
- iconURL.href = 'https:' + window.iconURL.href.substring(window.iconURL.protocol.length);
-}
 
 console.log(iconURL.protocol);
 
         d = JSON.parse(d);
         var dataSet = d.current_observation;
-        var iconURL = dataSet.icon_url;
+        var iconURL = dataSet.icon_url.slice(0, dataSet.icon_url.indexOf(":")) + "s" + dataSet.icon_url.slice(dataSet.icon_url.indexOf(":"));
         var currentCity = dataSet.observation_location.city;
         for (var i = currentCity.length; i > 0; i--) {
             if (currentCity[i] === ',') {
