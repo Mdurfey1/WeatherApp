@@ -82,7 +82,7 @@ var backgroundUrls = {
     chancetstorms: "https://coclouds.com/wp-content/uploads/2013/06/passing-thunderstorm-pink-sunset-2013-06-29.jpg",
     chancesnow: "https://static.pexels.com/photos/54206/pexels-photo-54206.jpeg",
     chancesleet: "https://upload.wikimedia.org/wikipedia/commons/0/03/RhB_ABe_8-12_Langwieser_Viadukt.jpg",
-    chancerain: "http://www.pixnio.com/free-images/2017/03/15/2017-03-15-18-08-46.jpg",
+    chancerain: "https://www.pixnio.com/free-images/2017/03/15/2017-03-15-18-08-46.jpg",
     chanceflurries: "https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg",
     nt_partlycloudy: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
     nt_tstorms: "https://static.pexels.com/photos/28774/pexels-photo-28774.jpg",
