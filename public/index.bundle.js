@@ -18,7 +18,6 @@ $(document).ready(function () {
             d = JSON.parse(d);
             var dataSet = d.current_observation;
             var iconURL = (dataSet.icon_url).slice(0, (dataSet.icon_url).indexOf(":")) + "s" + (dataSet.icon_url).slice((dataSet.icon_url).indexOf(":"));
-        console.log(iconURL);
             var currentCity = dataSet.observation_location.city;
             for (var i = currentCity.length; i > 0; i--) {
                 if (currentCity[i] === ',') {
@@ -64,7 +63,7 @@ $(document).ready(function () {
             if (iconDesc === "cloudy") {
                 $('body').css('background-image', "url(https://static.pexels.com/photos/158163/clouds-cloudporn-weather-lookup-158163.jpeg)");
             }
-            var backgroundUrlIdentifier = iconURL.slice(28, -4);
+            var backgroundUrlIdentifier = iconURL.slice(29, -4);
             var backgroundUrls = (_backgroundUrls = {
                 partlycloudy: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Kettle_Creek_State_Park_vista.jpg",
                 tstorms: "https://static.pexels.com/photos/167915/pexels-photo-167915.jpeg",
