@@ -14,11 +14,10 @@ $(document).ready(function() {
     .then(d => { 
 
 
-console.log(iconURL.protocol);
-
         d = JSON.parse(d);
         var dataSet = d.current_observation;
-        var iconURL = dataSet.icon_url.slice(0, dataSet.icon_url.indexOf(":")) + "s" + dataSet.icon_url.slice(dataSet.icon_url.indexOf(":"));
+        var iconURL = (dataSet.icon_url).slice(0, (dataSet.icon_url).indexOf(":")) + "s" + (dataSet.icon_url).slice((dataSet.icon_url).indexOf(":"));
+        console.log(iconURL);
         var currentCity = dataSet.observation_location.city;
         for (var i = currentCity.length; i > 0; i--) {
             if (currentCity[i] === ',') {
