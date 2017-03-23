@@ -1,5 +1,5 @@
 # WeatherApp
-Location based interactive local weather utilizing a local node server
+Location based interactive local weather
 
 https://weathercurrent.herokuapp.com/
 
