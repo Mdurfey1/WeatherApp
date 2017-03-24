@@ -162,6 +162,7 @@ $('#toggle-f').click(function(){
 } //SUCCESS//
 function error (err){ 
     console.log(err)
+    $('body').html(`<h1 class = "col-lg-4 col-lg-offset-4">Down for maintenance</h1>`);
 };
 
 
