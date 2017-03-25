@@ -25,12 +25,14 @@ $(document).ready(function () {
                     var currentCityShortened = currentCity.slice(i + 2);
                     break;
                 }
+                else {currentCityShortened = currentCity};
             }
             for (var i = 0; i < currentCity.length; i++) {
                 if (currentCity[i] === ',') {
                     var currentArea = currentCity.slice(0, i);
                     break;
                 }
+                else {currentArea = dataSet.station_id};
             }
             var currentState = dataSet.observation_location.state;
             var uv = Number(dataSet.UV);

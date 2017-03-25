@@ -120,7 +120,9 @@ if (currentCityShortened) {
 }
 $('#weather-location').html(`<h3 style = "font-size: 11px;">Reading From:</h3>`);
 $('#currentState').html(`${currentState}`);
+if (currentArea != "undefined") {
 $('#currentArea').html(`${currentArea}`);
+}
 $('#iconImage').html(`<img src = "${iconURL}"></img>`);
 $('#weather-description').text(`${weatherDescription}`);
 $('#temp').html(htmlf);
