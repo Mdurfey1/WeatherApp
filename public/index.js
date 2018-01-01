@@ -93,7 +93,7 @@ var backgroundUrlIdentifier = iconURL.slice(29, -4);
             nt_partlysunny: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Flickr_-_Nicholas_T_-_Partly_Sunny.jpg",
             nt_partlycloudy: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
             nt_mostlysunny: "https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg",
-            nt_mostlycloudy: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
+            nt_mostlycloudy: "http://www.androidguys.com/wp-content/uploads/2015/11/night_sky_cloudy_moon_wallpaper.jpg",
             nt_hazy: "https://static.pexels.com/photos/196920/pexels-photo-196920.jpeg",
             nt_fog: "https://static.pexels.com/photos/1068/lights-night-dark-industry.jpg",
             nt_flurries: "https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg",
