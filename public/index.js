@@ -97,7 +97,7 @@ var backgroundUrlIdentifier = iconURL.slice(29, -4);
             nt_hazy: "https://static.pexels.com/photos/196920/pexels-photo-196920.jpeg",
             nt_fog: "https://static.pexels.com/photos/1068/lights-night-dark-industry.jpg",
             nt_flurries: "https://static.pexels.com/photos/42267/photographer-snowstorm-snow-winter-42267.jpeg",
-            nt_clear: "https://static.pexels.com/photos/127634/pexels-photo-127634.jpeg",
+            nt_clear: "https://static.pexels.com/photos/59030/night-sky-stars-trees-59030.jpeg",
             nt_chancetstorms: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
             nt_chancesnow: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
             nt_chancesleet: "https://static.pexels.com/photos/111263/pexels-photo-111263.jpeg",
